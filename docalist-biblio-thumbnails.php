@@ -2,7 +2,7 @@
 /**
  * This file is part of the 'Docalist Biblio' plugin.
  *
- * Copyright (C) 2012-2014 Daniel Ménard
+ * Copyright (C) 2012-2015 Daniel Ménard
  *
  * For copyright and license information, please view the
  * LICENSE.txt file that was distributed with this source code.
@@ -29,7 +29,7 @@ namespace Docalist\Biblio\Thumbnails;
  */
 add_action('admin_notices', function() {
     if (! function_exists('docalist')) {
-        echo '<div class="error"><p>Docalist Biblio requires Docalist Core.</p></div>';
+        echo '<div class="error"><p>Docalist Biblio Thumbnails requires Docalist Core.</p></div>';
     } elseif (! class_exists('\Docalist\Biblio\Plugin')) {
         echo '<div class="error"><p>Docalist Biblio Thumbnails requires Docalist Biblio.</p></div>';
     }
