@@ -24,12 +24,7 @@ class Plugin {
         // Charge les fichiers de traduction du plugin
         load_plugin_textdomain('docalist-biblio-thumbnails', false, 'docalist-biblio-thumbnails/languages');
 
-        // Si docalist-core n'est pas chargé, inutile d'aller plus loin
-        if (! function_exists('docalist')) {
-            return;
-        }
-
-        add_filter( 'post_thumbnail_html', function($html, $post_id, $post_thumbnail_id, $size, $attr) {
+        add_filter('post_thumbnail_html', function($html, $post_id, $post_thumbnail_id, $size, $attr) {
             // Si le post a déjà un thumbnail, terminé
             if ($post_thumbnail_id) {
                 return $html;
