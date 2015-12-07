@@ -10,7 +10,7 @@
  * Plugin Name: Docalist Biblio Thumbnails
  * Plugin URI:  http://docalist.org/
  * Description: Docalist-Biblio Extension: provides default thumbails for notices with links.
- * Version:     0.1
+ * Version:     0.3.0
  * Author:      Daniel Ménard
  * Author URI:  http://docalist.org/
  * Text Domain: docalist-biblio
@@ -19,13 +19,12 @@
  * @package     Docalist\Biblio
  * @subpackage  Thumbnails
  * @author      Daniel Ménard <daniel.menard@laposte.net>
- * @version     SVN: $Id$
  */
 
 namespace Docalist\Biblio\Thumbnails;
 
 // Définit une constante pour indiquer que ce plugin est activé
-define('DOCALIST_BIBLIO_THUMBNAILS', __FILE__);
+define('DOCALIST_BIBLIO_THUMBNAILS', __DIR__);
 
 /**
  * Initialise le plugin.
