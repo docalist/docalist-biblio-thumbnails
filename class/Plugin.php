@@ -31,7 +31,7 @@ class Plugin
             }
 
             // Si ce n'est pas une notice, terminé
-            if (substr(get_post_type($post_id), 0, 6) !== 'dclref') {
+            if (substr(get_post_type($post_id), 0, 2) !== 'db') {
                 return $html;
             }
 
