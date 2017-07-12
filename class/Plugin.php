@@ -2,7 +2,7 @@
 /**
  * This file is part of the 'Docalist Biblio' plugin.
  *
- * Copyright (C) 2014-2015 Daniel Ménard
+ * Copyright (C) 2014-2017 Daniel Ménard
  *
  * For copyright and license information, please view the
  * LICENSE.txt file that was distributed with this source code.
@@ -12,6 +12,7 @@
  * @author      Daniel Ménard <daniel.menard@laposte.net>
  */
 namespace Docalist\Biblio\Thumbnails;
+use Docalist\Biblio\Reference;
 
 /**
  * Extension pour Docalist Biblio : génère une image à la une par défaut pour
@@ -36,7 +37,7 @@ class Plugin
             }
 
             // Récupère la notice en cours
-            $ref = docalist('docalist-biblio')->getReference($post_id); /* @var $ref \Docalist\Biblio\Reference */
+            $ref = docalist('docalist-biblio')->getReference($post_id); /** @var Reference $ref */
 
             // Si la notice n'a pas de liens, terminé
             if (! isset($ref->link)) {
@@ -44,7 +45,7 @@ class Plugin
             }
 
             // Récupère le premier lien qui figure dans la notice
-            $url = $ref->link->first()->url->value();
+            $url = $ref->link->first()->url->getPhpValue();
 
             // Récupère la largeur de l'image à générer
             // source : http://codex.wordpress.org/Function_Reference/get_intermediate_image_sizes
