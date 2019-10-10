@@ -2,7 +2,7 @@
 /**
  * This file is part of the 'Docalist Biblio' plugin.
  *
- * Copyright (C) 2014-2017 Daniel Ménard
+ * Copyright (C) 2014-2018 Daniel Ménard
  *
  * For copyright and license information, please view the
  * LICENSE.txt file that was distributed with this source code.
@@ -12,7 +12,8 @@
  * @author      Daniel Ménard <daniel.menard@laposte.net>
  */
 namespace Docalist\Biblio\Thumbnails;
-use Docalist\Biblio\Reference;
+
+use Docalist\Data\Plugin as DocalistData;
 
 /**
  * Extension pour Docalist Biblio : génère une image à la une par défaut pour
@@ -37,7 +38,8 @@ class Plugin
             }
 
             // Récupère la notice en cours
-            $ref = docalist('docalist-biblio')->getReference($post_id); /** @var Reference $ref */
+            $docalistData = docalist('docalist-data'); /** @var DocalistData $docalistData */
+            $ref = $docalistData->getRecord($post_id);
 
             // Si la notice n'a pas de liens, terminé
             if (! isset($ref->link)) {
