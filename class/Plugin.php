@@ -137,7 +137,7 @@ class Plugin
                     }
                 }
 
-                return "http://img.youtube.com/vi/$id/$name.jpg";
+                return "https://img.youtube.com/vi/$id/$name.jpg";
             }
         }
     }
@@ -158,7 +158,7 @@ class Plugin
                 $id = $match[1];
 
                 // Vignette par défaut quelle que soit la taille demandée
-                return "http://www.dailymotion.com/thumbnail/video/$id";
+                return "https://www.dailymotion.com/thumbnail/video/$id";
 
                 /*
 
@@ -208,7 +208,7 @@ class Plugin
             if (preg_match($test, $url, $match)) {
                 $id = $match[1];
 
-                $thumbnail = json_decode(@file_get_contents("http://vimeo.com/api/v2/video/$id.json"));
+                $thumbnail = json_decode(@file_get_contents("https://vimeo.com/api/v2/video/$id.json"));
                 if (is_null($thumbnail)) {
                     return;
                 }
@@ -260,11 +260,11 @@ class Plugin
             }
         }
 
-        return "http://www.apercite.fr/api/apercite/$name/yes/$url";
+        return "https://www.apercite.fr/api/apercite/$name/yes/$url";
     }
 
     protected function wordpressMshots($url, $width)
     {
-        return 'http://s.wordpress.com/mshots/v1/' . urlencode($url) . '?w=' . $width;
+        return 'https://s.wordpress.com/mshots/v1/' . urlencode($url) . '?w=' . $width;
     }
 }
